@@ -1,0 +1,50 @@
+{
+    "name": "genealabs/laravel-nova-blog",
+    "description": "Drop-in Blog module for Laravel using Nova as an admin panel.",
+    "keywords": [
+        "laravel",
+        "nova"
+    ],
+    "license": "MIT",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
+    "require": {
+        "genealabs/nova-file-upload-field": "^0.3.2",
+        "genealabs/nova-gutenberg": "^0.2.0",
+        "illuminate/support": "^7.0",
+        "laravel/nova": "*",
+        "laravel/scout": "*",
+        "symfony/thanks": "^1.2"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^5.0",
+        "phpmd/phpmd": "^2.8",
+        "phpstan/phpstan": "^0.12.33",
+        "phpunit/phpunit": "^8.5",
+        "sebastian/phpcpd": "^5.0",
+        "squizlabs/php_codesniffer": "^3.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "GeneaLabs\\LaravelNovaBlog\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GeneaLabs\\LaravelNovaBlog\\Providers\\Service",
+                "GeneaLabs\\LaravelNovaBlog\\Providers\\Nova",
+                "GeneaLabs\\LaravelNovaBlog\\Providers\\Tool"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
