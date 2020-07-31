@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0bf10cf6cb5227a77ed692616f131cab",
+    "content-hash": "12dc6229e4d5901c0b003e9de17afdb3",
     "packages": [
         {
             "name": "brick/math",
@@ -897,23 +897,23 @@
         },
         {
             "name": "genealabs/nova-gutenberg",
-            "version": "0.2.0",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GeneaLabs/nova-gutenberg.git",
-                "reference": "1e3cfb195cd88a55904b567a31b663f6017942f1"
+                "reference": "1f2fbc1505d576a5d1a5c1a532603740e717db0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GeneaLabs/nova-gutenberg/zipball/1e3cfb195cd88a55904b567a31b663f6017942f1",
-                "reference": "1e3cfb195cd88a55904b567a31b663f6017942f1",
+                "url": "https://api.github.com/repos/GeneaLabs/nova-gutenberg/zipball/1f2fbc1505d576a5d1a5c1a532603740e717db0f",
+                "reference": "1f2fbc1505d576a5d1a5c1a532603740e717db0f",
                 "shasum": ""
             },
             "require": {
                 "laravel/nova": "^3.0",
                 "symfony/thanks": "^1.2",
-                "unisharp/laravel-filemanager": "^1.9",
-                "van-ons/laraberg": "0.0.6-beta"
+                "unisharp/laravel-filemanager": "^2.0",
+                "van-ons/laraberg": "^1.1"
             },
             "type": "library",
             "extra": {
@@ -944,7 +944,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-03-06T15:09:10+00:00"
+            "time": "2020-07-31T21:18:18+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
@@ -1086,6 +1086,53 @@
                 "watermark"
             ],
             "time": "2019-11-02T09:15:47+00:00"
+        },
+        {
+            "name": "jenssegers/model",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jenssegers/model.git",
+                "reference": "3a70a5b155a690d0dc3a063e1878d4fd7b0b5b6d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jenssegers/model/zipball/3a70a5b155a690d0dc3a063e1878d4fd7b0b5b6d",
+                "reference": "3a70a5b155a690d0dc3a063e1878d4fd7b0b5b6d",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^5.0|^6.0|^7.0",
+                "illuminate/support": "^4.0|^5.0|^6.0|^7.0"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "*",
+                "phpunit/phpunit": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Jenssegers\\Model\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jens Segers",
+                    "homepage": "https://jenssegers.com"
+                }
+            ],
+            "description": "An Laravel eloquent-like model class, for Laravel and other frameworks",
+            "homepage": "https://github.com/jenssegers/model",
+            "keywords": [
+                "eloquent",
+                "laravel",
+                "model"
+            ],
+            "time": "2020-03-05T17:17:42+00:00"
         },
         {
             "name": "laravel/framework",
@@ -5188,37 +5235,38 @@
         },
         {
             "name": "unisharp/laravel-filemanager",
-            "version": "v1.9.2",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/UniSharp/laravel-filemanager.git",
-                "reference": "aaf2764f26eb8dcc9356bea1e25010333c2e61f4"
+                "reference": "a2c390b1414fa35457fc5c6d01068dcf6dac7cd2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/UniSharp/laravel-filemanager/zipball/aaf2764f26eb8dcc9356bea1e25010333c2e61f4",
-                "reference": "aaf2764f26eb8dcc9356bea1e25010333c2e61f4",
+                "url": "https://api.github.com/repos/UniSharp/laravel-filemanager/zipball/a2c390b1414fa35457fc5c6d01068dcf6dac7cd2",
+                "reference": "a2c390b1414fa35457fc5c6d01068dcf6dac7cd2",
                 "shasum": ""
             },
             "require": {
                 "ext-exif": "*",
                 "ext-fileinfo": "*",
-                "illuminate/support": ">=4.2.0",
+                "illuminate/config": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0 || ^7.0",
+                "illuminate/container": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0 || ^7.0",
+                "illuminate/filesystem": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0 || ^7.0",
+                "illuminate/http": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0 || ^7.0",
+                "illuminate/support": "5.4.* || 5.5.* || 5.6.* || 5.7.* || 5.8.* || ^6.0 || ^7.0",
                 "intervention/image": "2.*",
-                "php": ">=5.4.0"
+                "php": ">=7.2.0"
             },
             "require-dev": {
-                "orchestra/testbench": "~3.0",
-                "phpspec/phpspec": "~2.1",
-                "phpunit/phpunit": "~4.8"
+                "mockery/mockery": "^0.9.9",
+                "phpunit/phpunit": "^6.2",
+                "squizlabs/php_codesniffer": "^3.1"
             },
             "suggest": {
                 "ext-gd": "to use GD library based image processing.",
                 "ext-imagick": "to use Imagick based image processing."
             },
-            "bin": [
-                "bin/debug"
-            ],
             "type": "library",
             "extra": {
                 "laravel": {
@@ -5244,10 +5292,10 @@
                 },
                 {
                     "name": "UniSharp Ltd.",
-                    "email": "unisharp-service@unisharp.com"
+                    "email": "opensource@unisharp.com"
                 }
             ],
-            "description": "A file upload/editor intended for use with Laravel 5 and CKEditor / TinyMCE",
+            "description": "A file upload/editor intended for use with Laravel 5 to 6 and CKEditor / TinyMCE",
             "keywords": [
                 "CKEditor",
                 "file",
@@ -5258,20 +5306,20 @@
                 "tinymce",
                 "upload"
             ],
-            "time": "2018-07-05T11:36:08+00:00"
+            "time": "2020-05-10T10:10:07+00:00"
         },
         {
             "name": "van-ons/laraberg",
-            "version": "v0.0.6-beta",
+            "version": "v1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/VanOns/laraberg.git",
-                "reference": "9fda1daf62170cd02ef92bc56e90f7084fe49440"
+                "reference": "35a6266c3877b3585942f990589de90489554e2b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/VanOns/laraberg/zipball/9fda1daf62170cd02ef92bc56e90f7084fe49440",
-                "reference": "9fda1daf62170cd02ef92bc56e90f7084fe49440",
+                "url": "https://api.github.com/repos/VanOns/laraberg/zipball/35a6266c3877b3585942f990589de90489554e2b",
+                "reference": "35a6266c3877b3585942f990589de90489554e2b",
                 "shasum": ""
             },
             "require": {
@@ -5303,7 +5351,7 @@
                 }
             ],
             "description": "A Gutenberg implementation for Laravel",
-            "time": "2019-05-21T14:51:50+00:00"
+            "time": "2020-05-27T13:58:19+00:00"
         },
         {
             "name": "vlucas/phpdotenv",

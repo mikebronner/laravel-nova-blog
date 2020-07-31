@@ -1,6 +1,6 @@
 <?php
 
-namespace GeneaLabs\NovaMultiTenantManager\Providers;
+namespace GeneaLabs\LaravelNovaBlog\Providers;
 
 use GeneaLabs\LaravelNovaBlog\Nova\Post;
 use Laravel\Nova\Nova as LaravelNova;
@@ -10,16 +10,10 @@ class Nova extends NovaApplicationServiceProvider
 {
     protected function resources()
     {
-        LaravelNova::resources([
+        Post::$model = app("blog")->postModel;
+        
+        (new LaravelNova())->resources([
             Post::class,
         ]);
-    }
-
-    protected function routes()
-    {
-        LaravelNova::routes()
-            ->withAuthenticationRoutes()
-            ->withPasswordResetRoutes()
-            ->register();
     }
 }

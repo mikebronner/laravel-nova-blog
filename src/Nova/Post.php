@@ -5,8 +5,8 @@ namespace GeneaLabs\LaravelNovaBlog\Nova;
 use GeneaLabs\LaravelNovaBlog\Post as PostModel;
 use GeneaLabs\NovaFileUploadField\FileUpload;
 use GeneaLabs\NovaGutenberg\Gutenberg;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
@@ -15,18 +15,12 @@ use Laravel\Nova\Resource as NovaResource;
 
 class Post extends NovaResource
 {
-    public static $displayInNavigation = true;
-    public static $model = PostModel::class;
+    public static $model;
     public static $title = 'title';
     public static $search = [
         'title',
         'body',
     ];
-
-    public function authorizedToDelete(Request $request)
-    {
-        return false;
-    }
 
     public function fields(Request $request)
     {
@@ -61,8 +55,8 @@ class Post extends NovaResource
                         ?: auth()->user()->id,
                 ])
                 ->searchable(),
-            $this->ownerRelationshipField(),
-            $this->ownerIndexField(),
+            // $this->ownerRelationshipField(),
+            // $this->ownerIndexField(),
             DateTime::make("Published At"),
             DateTime::make("Created At")
                 ->onlyOnDetail(),
@@ -73,6 +67,6 @@ class Post extends NovaResource
 
     public static function label()
     {
-        return "Alias";
+        return "Blog Posts";
     }
 }

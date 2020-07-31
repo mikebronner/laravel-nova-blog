@@ -10,14 +10,19 @@
         {
             "type": "composer",
             "url": "https://nova.laravel.com"
+        },
+        {
+            "type": "path",
+            "url": "../nova-gutenberg"
         }
     ],
     "require": {
         "genealabs/nova-file-upload-field": "^0.3.2",
-        "genealabs/nova-gutenberg": "^0.2.0",
+        "genealabs/nova-gutenberg": "^0.3.0",
         "illuminate/support": "^7.0",
-        "laravel/nova": "*",
-        "laravel/scout": "*",
+        "jenssegers/model": "^1.3",
+        "laravel/nova": "^3.0",
+        "laravel/scout": "^8.1",
         "symfony/thanks": "^1.2"
     },
     "require-dev": {
@@ -37,8 +42,7 @@
         "laravel": {
             "providers": [
                 "GeneaLabs\\LaravelNovaBlog\\Providers\\Service",
-                "GeneaLabs\\LaravelNovaBlog\\Providers\\Nova",
-                "GeneaLabs\\LaravelNovaBlog\\Providers\\Tool"
+                "GeneaLabs\\LaravelNovaBlog\\Providers\\Nova"
             ]
         }
     },
