@@ -2,6 +2,7 @@
 
 namespace GeneaLabs\LaravelNovaBlog\Nova;
 
+use App\Overrides\Post as OverridesPost;
 use GeneaLabs\LaravelNovaBlog\Post as PostModel;
 use GeneaLabs\NovaFileUploadField\FileUpload;
 use GeneaLabs\NovaGutenberg\Gutenberg;
@@ -15,7 +16,7 @@ use Laravel\Nova\Resource as NovaResource;
 
 class Post extends NovaResource
 {
-    public static $model;
+    public static $model = OverridesPost::class;
     public static $title = 'title';
     public static $search = [
         'title',

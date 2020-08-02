@@ -21,7 +21,8 @@ class Blog extends Model
 
     public function getPostModelAttribute(): string
     {
-        return $this->postModel;
+        return $this->postModel
+            ?? Post::class;
     }
 
     public function getIgnoreMigrationsAttribute(): string

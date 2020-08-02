@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "12dc6229e4d5901c0b003e9de17afdb3",
+    "content-hash": "b56965790308fe648d3291ee35e1f66c",
     "packages": [
         {
             "name": "brick/math",
@@ -897,16 +897,16 @@
         },
         {
             "name": "genealabs/nova-gutenberg",
-            "version": "0.3.0",
+            "version": "0.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/GeneaLabs/nova-gutenberg.git",
-                "reference": "1f2fbc1505d576a5d1a5c1a532603740e717db0f"
+                "reference": "4ab0c782e57fd1e2597d6f6e4a88cb9ec3614413"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GeneaLabs/nova-gutenberg/zipball/1f2fbc1505d576a5d1a5c1a532603740e717db0f",
-                "reference": "1f2fbc1505d576a5d1a5c1a532603740e717db0f",
+                "url": "https://api.github.com/repos/GeneaLabs/nova-gutenberg/zipball/4ab0c782e57fd1e2597d6f6e4a88cb9ec3614413",
+                "reference": "4ab0c782e57fd1e2597d6f6e4a88cb9ec3614413",
                 "shasum": ""
             },
             "require": {
@@ -914,6 +914,16 @@
                 "symfony/thanks": "^1.2",
                 "unisharp/laravel-filemanager": "^2.0",
                 "van-ons/laraberg": "^1.1"
+            },
+            "require-dev": {
+                "fzaninotto/faker": "^1.9.1",
+                "mockery/mockery": "^1.3.1",
+                "nunomaduro/collision": "^4.0",
+                "phpmd/phpmd": "^2.8",
+                "phpstan/phpstan": "^0.12.33",
+                "phpunit/phpunit": "^8.5",
+                "sebastian/phpcpd": "^5.0",
+                "squizlabs/php_codesniffer": "^3.5"
             },
             "type": "library",
             "extra": {
@@ -944,7 +954,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-07-31T21:18:18+00:00"
+            "time": "2020-08-02T20:27:24+00:00"
         },
         {
             "name": "guzzlehttp/psr7",
