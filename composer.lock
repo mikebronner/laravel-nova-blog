@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b56965790308fe648d3291ee35e1f66c",
+    "content-hash": "a1f6eee2e35533cdf85eb47c9db4490e",
     "packages": [
         {
             "name": "brick/math",
@@ -897,17 +897,11 @@
         },
         {
             "name": "genealabs/nova-gutenberg",
-            "version": "0.3.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/GeneaLabs/nova-gutenberg.git",
-                "reference": "4ab0c782e57fd1e2597d6f6e4a88cb9ec3614413"
-            },
+            "version": "dev-master",
             "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/GeneaLabs/nova-gutenberg/zipball/4ab0c782e57fd1e2597d6f6e4a88cb9ec3614413",
-                "reference": "4ab0c782e57fd1e2597d6f6e4a88cb9ec3614413",
-                "shasum": ""
+                "type": "path",
+                "url": "../nova-gutenberg",
+                "reference": "ee00c9d9c196d9cbb8ed744036cd862701399f86"
             },
             "require": {
                 "laravel/nova": "^3.0",
@@ -938,7 +932,12 @@
                     "GeneaLabs\\NovaGutenberg\\": "src/"
                 }
             },
-            "notification-url": "https://packagist.org/downloads/",
+            "scripts": {
+                "post-update-cmd": [
+                    "sed -i 's/\\/\\/\\# sourceMappingURL=laraberg.js.map//g' ./dist/js/laraberg.js",
+                    "sed -i 's/\\/\\*\\# sourceMappingURL=laraberg.css.map\\*\\///g' ./dist/css/laraberg.css"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -948,13 +947,9 @@
                 "laravel",
                 "nova"
             ],
-            "funding": [
-                {
-                    "url": "https://github.com/mikebronner",
-                    "type": "github"
-                }
-            ],
-            "time": "2020-08-02T20:27:24+00:00"
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "guzzlehttp/psr7",
@@ -7961,7 +7956,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "genealabs/nova-gutenberg": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
