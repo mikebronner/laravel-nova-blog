@@ -3,13 +3,14 @@
 namespace GeneaLabs\LaravelNovaBlog\Nova;
 
 use App\Overrides\Post as OverridesPost;
-use GeneaLabs\LaravelNovaBlog\Post as PostModel;
 use GeneaLabs\NovaFileUploadField\FileUpload;
 use GeneaLabs\NovaGutenberg\Gutenberg;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\MorphMany;
+use Laravel\Nova\Fields\MorphToMany;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Resource as NovaResource;
@@ -25,7 +26,7 @@ class Post extends NovaResource
 
     public function fields(Request $request)
     {
-        return [
+        $fields = [
             ID::make()
                 ->sortable(),
             FileUpload::make("Featured Image")
@@ -50,6 +51,15 @@ class Post extends NovaResource
                     describe its goals, its history, etc. Viewers will see this
                     as the introduction on the public Archive page.")
                 ->rules("required"),
+        ];
+
+        if (class_exists("\\GeneaLabs\\LaravelNovaCategories\\Nova\\Category")) {
+            $fields = array_merge($fields, [
+                MorphToMany::make("Categories", "categories", "\\GeneaLabs\\LaravelNovaCategories\\Nova\\Category"),
+            ]);
+        }
+
+        $fields = array_merge($fields, [
             BelongsTo::make("Author", "author", User::class)
                 ->withMeta([
                     "belongsToId" => $this->resource->governor_owned_by
@@ -63,7 +73,9 @@ class Post extends NovaResource
                 ->onlyOnDetail(),
             DateTime::make("Updated At")
                 ->onlyOnDetail(),
-        ];
+        ]);
+
+        return $fields;
     }
 
     public static function label()

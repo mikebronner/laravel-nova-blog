@@ -2,12 +2,22 @@
 
 namespace GeneaLabs\LaravelNovaBlog;
 
-use Jenssegers\Model\Model;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Blog extends Model
 {
+    protected $fillable = [
+        "title",
+        "description",
+    ];
     protected $ignoreMigrations = false;
     protected $postModel;
+
+    public function posts() : HasMany
+    {
+        return $this->hasMany(Post::class);
+    }
 
     public function ignoreMigrations(): void
     {
