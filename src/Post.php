@@ -3,13 +3,15 @@
 namespace GeneaLabs\LaravelNovaBlog;
 
 use App\User;
+use GeneaLabs\LaravelOverridableModel\Contracts\OverridableModel;
+use GeneaLabs\LaravelOverridableModel\Traits\Overridable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Post extends Model
+class Post extends Model implements OverridableModel
 {
+    use Overridable;
     use SoftDeletes;
 
     protected $dates = [
@@ -28,7 +30,7 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function category() : MorphToMany
+    public function category() : MorphBy
     {
         return $this->morphToMany("\\GeneaLabs\\LaravelNovaCategories\\Category", "categorizable");
     }

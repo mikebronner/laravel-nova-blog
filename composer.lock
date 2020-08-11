@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a1f6eee2e35533cdf85eb47c9db4490e",
+    "content-hash": "601d7edc1044697eaefaddd51be2674b",
     "packages": [
         {
             "name": "brick/math",
@@ -792,16 +792,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.18",
+            "version": "2.1.19",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "cfa3d44471c7f5bfb684ac2b0da7114283d78441"
+                "reference": "840d5603eb84cc81a6a0382adac3293e57c1c64c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/cfa3d44471c7f5bfb684ac2b0da7114283d78441",
-                "reference": "cfa3d44471c7f5bfb684ac2b0da7114283d78441",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/840d5603eb84cc81a6a0382adac3293e57c1c64c",
+                "reference": "840d5603eb84cc81a6a0382adac3293e57c1c64c",
                 "shasum": ""
             },
             "require": {
@@ -846,7 +846,7 @@
                 "validation",
                 "validator"
             ],
-            "time": "2020-06-16T20:11:17+00:00"
+            "time": "2020-08-08T21:28:19+00:00"
         },
         {
             "name": "embed/embed",
@@ -901,6 +901,91 @@
                 "twitter cards"
             ],
             "time": "2020-07-03T15:04:01+00:00"
+        },
+        {
+            "name": "genealabs/laravel-nova-morph-many-to-one",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../laravel-nova-morph-many-to-one",
+                "reference": "03ad38c1d5b7f23744b522dd7b9af3d3c82907c2"
+            },
+            "require": {
+                "illuminate/database": "^7.0",
+                "illuminate/support": "^7.0",
+                "laravel/nova": "^3.0",
+                "symfony/thanks": "^1.2"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^5.0",
+                "phpmd/phpmd": "^2.8",
+                "phpstan/phpstan": "^0.12.33",
+                "phpunit/phpunit": "^8.5",
+                "sebastian/phpcpd": "^5.0",
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "GeneaLabs\\LaravelNovaMorphManyToOne\\Providers\\Service"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GeneaLabs\\LaravelNovaMorphManyToOne\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Drop-in package that adds a many-to-one (inverse of one-to-many) polymorphic relationship to Eloquent and Nova.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
+            "name": "genealabs/laravel-overridable-model",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "../laravel-overridable-model",
+                "reference": "d174be4ec831c49cc53f09fe31fe1742db290862"
+            },
+            "require": {
+                "illuminate/support": "^7.0",
+                "symfony/thanks": "^1.2"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^5.0",
+                "phpmd/phpmd": "^2.8",
+                "phpstan/phpstan": "^0.12.33",
+                "phpunit/phpunit": "^8.5",
+                "sebastian/phpcpd": "^5.0",
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "GeneaLabs\\LaravelOverridableModel\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "Provide a uniform method of allowing models to be overridden in Laravel.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "genealabs/nova-file-upload-field",
@@ -1199,16 +1284,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v7.23.2",
+            "version": "v7.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "75792f4c6945749046d4ec1ce560b04640d36b99"
+                "reference": "71bfb1f2f89e4e31fba539d43fe287143e635e68"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/75792f4c6945749046d4ec1ce560b04640d36b99",
-                "reference": "75792f4c6945749046d4ec1ce560b04640d36b99",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/71bfb1f2f89e4e31fba539d43fe287143e635e68",
+                "reference": "71bfb1f2f89e4e31fba539d43fe287143e635e68",
                 "shasum": ""
             },
             "require": {
@@ -1352,7 +1437,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2020-08-06T14:56:13+00:00"
+            "time": "2020-08-07T15:13:57+00:00"
         },
         {
             "name": "laravel/nova",
@@ -1646,28 +1731,29 @@
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.70",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "585824702f534f8d3cf7fab7225e8466cc4b7493"
+                "reference": "481c0174b9c99b189959e2bb9d6f52188ed1f692"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/585824702f534f8d3cf7fab7225e8466cc4b7493",
-                "reference": "585824702f534f8d3cf7fab7225e8466cc4b7493",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/481c0174b9c99b189959e2bb9d6f52188ed1f692",
+                "reference": "481c0174b9c99b189959e2bb9d6f52188ed1f692",
                 "shasum": ""
             },
             "require": {
                 "ext-fileinfo": "*",
-                "php": ">=5.5.9"
+                "league/mime-type-detection": "^1.3",
+                "php": "^7.2.5 || ^8.0"
             },
             "conflict": {
                 "league/flysystem-sftp": "<1.0.6"
             },
             "require-dev": {
-                "phpspec/phpspec": "^3.4 || ^4.0 || ^5.0 || ^6.0",
-                "phpunit/phpunit": "^5.7.26"
+                "phpspec/prophecy": "^1.11.1",
+                "phpunit/phpunit": "^8.5.8"
             },
             "suggest": {
                 "ext-fileinfo": "Required for MimeType",
@@ -1732,7 +1818,58 @@
                     "type": "other"
                 }
             ],
-            "time": "2020-07-26T07:20:36+00:00"
+            "time": "2020-08-09T15:57:10+00:00"
+        },
+        {
+            "name": "league/mime-type-detection",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thephpleague/mime-type-detection.git",
+                "reference": "fda190b62b962d96a069fcc414d781db66d65b69"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thephpleague/mime-type-detection/zipball/fda190b62b962d96a069fcc414d781db66d65b69",
+                "reference": "fda190b62b962d96a069fcc414d781db66d65b69",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12.36",
+                "phpunit/phpunit": "^8.5.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "League\\MimeTypeDetection\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frankdejonge.nl"
+                }
+            ],
+            "description": "Mime-type detection for Flysystem",
+            "funding": [
+                {
+                    "url": "https://github.com/frankdejonge",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/league/flysystem",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-08-09T10:34:01+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -6482,16 +6619,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.36",
+            "version": "0.12.37",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "eaeff985e395ff4e7aebf3251a43fca6c9be1af3"
+                "reference": "5e16d83e6eb2dd784fbdaeaece5e2bca72e4f68a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/eaeff985e395ff4e7aebf3251a43fca6c9be1af3",
-                "reference": "eaeff985e395ff4e7aebf3251a43fca6c9be1af3",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/5e16d83e6eb2dd784fbdaeaece5e2bca72e4f68a",
+                "reference": "5e16d83e6eb2dd784fbdaeaece5e2bca72e4f68a",
                 "shasum": ""
             },
             "require": {
@@ -6534,7 +6671,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-08-05T09:29:40+00:00"
+            "time": "2020-08-09T14:32:41+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -7595,16 +7732,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "3.5.5",
+            "version": "3.5.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "73e2e7f57d958e7228fce50dc0c61f58f017f9f6"
+                "reference": "e97627871a7eab2f70e59166072a6b767d5834e0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/73e2e7f57d958e7228fce50dc0c61f58f017f9f6",
-                "reference": "73e2e7f57d958e7228fce50dc0c61f58f017f9f6",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/e97627871a7eab2f70e59166072a6b767d5834e0",
+                "reference": "e97627871a7eab2f70e59166072a6b767d5834e0",
                 "shasum": ""
             },
             "require": {
@@ -7642,7 +7779,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2020-04-17T01:09:41+00:00"
+            "time": "2020-08-10T04:50:15+00:00"
         },
         {
             "name": "symfony/config",
@@ -8016,6 +8153,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
+        "genealabs/laravel-overridable-model": 20,
+        "genealabs/laravel-nova-morph-many-to-one": 20,
         "genealabs/nova-gutenberg": 20
     },
     "prefer-stable": true,

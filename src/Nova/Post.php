@@ -2,22 +2,21 @@
 
 namespace GeneaLabs\LaravelNovaBlog\Nova;
 
-use App\Overrides\Post as OverridesPost;
+use GeneaLabs\LaravelNovaBlog\Post as PostModel;
+use GeneaLabs\LaravelNovaMorphManyToOne\Nova\MorphManyToOne;
 use GeneaLabs\NovaFileUploadField\FileUpload;
 use GeneaLabs\NovaGutenberg\Gutenberg;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\MorphMany;
-use Laravel\Nova\Fields\MorphToMany;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Resource as NovaResource;
 
 class Post extends NovaResource
 {
-    public static $model = OverridesPost::class;
+    public static $model = PostModel::class;
     public static $title = 'title';
     public static $search = [
         'title',
@@ -55,7 +54,11 @@ class Post extends NovaResource
 
         if (class_exists("\\GeneaLabs\\LaravelNovaCategories\\Nova\\Category")) {
             $fields = array_merge($fields, [
-                MorphToMany::make("Categories", "categories", "\\GeneaLabs\\LaravelNovaCategories\\Nova\\Category"),
+                MorphManyToOne::make(
+                    "Category",
+                    "category",
+                    "\\GeneaLabs\\LaravelNovaCategories\\Nova\\Category"
+                ),
             ]);
         }
 

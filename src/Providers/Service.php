@@ -11,7 +11,7 @@ class Service extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__ . '/../../routes/web.php');
 
-        if (! app("blog")->ignoreMigrations) {
+        if (! Blog::ignoreMigrations()) {
             $this->loadMigrationsFrom(__DIR__ . '/../../database/migrations');
         }
 
@@ -22,10 +22,6 @@ class Service extends ServiceProvider
 
     public function register()
     {
-        $this->app->singleton("blog", function () {
-            return app(Blog::class);
-        });
-
         $this->loadViewsFrom(
             __DIR__ . '/../../resources/views',
             'laravel-nova-blog'

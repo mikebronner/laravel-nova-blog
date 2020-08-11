@@ -14,9 +14,19 @@
         {
             "type": "path",
             "url": "../nova-gutenberg"
+        },
+        {
+            "type": "path",
+            "url": "../laravel-overridable-model"
+        },
+        {
+            "type": "path",
+            "url": "../laravel-nova-morph-many-to-one"
         }
     ],
     "require": {
+        "genealabs/laravel-overridable-model": "*@dev",
+        "genealabs/laravel-nova-morph-many-to-one": "*@dev",
         "genealabs/nova-file-upload-field": "^0.3.2",
         "genealabs/nova-gutenberg": "*@dev",
         "illuminate/support": "^7.0",
