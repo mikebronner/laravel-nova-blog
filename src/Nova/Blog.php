@@ -1,0 +1,44 @@
+<?php
+
+namespace GeneaLabs\LaravelNovaBlog\Nova;
+
+use GeneaLabs\LaravelNovaBlog\Blog as BlogModel;
+use GeneaLabs\LaravelNovaMorphManyToOne\Nova\MorphManyToOne;
+use GeneaLabs\NovaFileUploadField\FileUpload;
+use GeneaLabs\NovaGutenberg\Gutenberg;
+use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\DateTime;
+use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\MorphToMany;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Resource as NovaResource;
+
+class Blog extends NovaResource
+{
+    public static $model = BlogModel::class;
+    public static $title = 'title';
+    public static $search = [
+        'title',
+        'description',
+    ];
+
+    public function fields(Request $request)
+    {
+        return [
+            ID::make()
+                ->sortable(),
+            Text::make("Title")
+                ->sortable()
+                ->rules("required"),
+            Textarea::make("Description"),
+            HasMany::make("Posts", "posts", Post::class),
+            DateTime::make("Created At")
+                ->onlyOnDetail(),
+            DateTime::make("Updated At")
+                ->onlyOnDetail(),
+        ];
+    }
+}

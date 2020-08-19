@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\MorphToMany;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Resource as NovaResource;
@@ -28,6 +29,7 @@ class Post extends NovaResource
         $fields = [
             ID::make()
                 ->sortable(),
+            BelongsTo::make("Blog", "blog", Blog::class),
             FileUpload::make("Featured Image")
                 ->thumbnail(function ($image) {
                     return $image
@@ -59,6 +61,11 @@ class Post extends NovaResource
                     "category",
                     "\\GeneaLabs\\LaravelNovaCategories\\Nova\\Category"
                 ),
+                // MorphToMany::make(
+                //     "Categories",
+                //     "categories",
+                //     "\\GeneaLabs\\LaravelNovaCategories\\Nova\\Category"
+                // ),
             ]);
         }
 

@@ -8,9 +8,14 @@ use Illuminate\View\View;
 
 class BlogsController extends Controller
 {
-    public function show(Blog $blog) : View
+    public function show(int $blogId) : View
     {
-        return view("blogs.show")
+        $blogModel = Blog::model();
+        $blog = (new $blogModel)
+            ->with("posts")
+            ->find($blogId);
+
+        return view("laravel-nova-blog::blogs.show")
             ->with(compact("blog"));
     }
 }

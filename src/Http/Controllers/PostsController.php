@@ -11,7 +11,7 @@ class PostsController extends Controller
 {
     public function index() : View
     {
-        $postModel = app("blog")->postModel;
+        $postModel = (new Post)->model();
         $posts = (new $postModel)
             ->where("published_at", "<=", (new Carbon)->now())
             ->orderBy("published_at", "DESC")
@@ -24,7 +24,7 @@ class PostsController extends Controller
 
     public function show(int $postId) : View
     {
-        $postModel = app("blog")->postModel;
+        $postModel = (new Post)->model();
         $post = (new $postModel)->find($postId);
 
         return view("laravel-nova-blog::posts.show")

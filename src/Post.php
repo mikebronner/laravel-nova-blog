@@ -3,14 +3,18 @@
 namespace GeneaLabs\LaravelNovaBlog;
 
 use App\User;
+use GeneaLabs\LaravelNovaMorphManyToOne\MorphManyToOne;
+use GeneaLabs\LaravelNovaMorphManyToOne\Traits\HasMorphManyToOne;
 use GeneaLabs\LaravelOverridableModel\Contracts\OverridableModel;
 use GeneaLabs\LaravelOverridableModel\Traits\Overridable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model implements OverridableModel
 {
+    use HasMorphManyToOne;
     use Overridable;
     use SoftDeletes;
 
@@ -30,9 +34,14 @@ class Post extends Model implements OverridableModel
         return $this->belongsTo(User::class);
     }
 
-    public function category() : MorphBy
+    public function blog() : BelongsTo
     {
-        return $this->morphToMany("\\GeneaLabs\\LaravelNovaCategories\\Category", "categorizable");
+        return $this->belongsTo(Blog::class);
+    }
+
+    public function category() : MorphManyToOne
+    {
+        return $this->morphManyToOne("\\GeneaLabs\\LaravelNovaCategories\\Category", "categorizable");
     }
 
     public function getAuthorNameAttribute() : string
