@@ -14,7 +14,7 @@ class CreateBlogsTable extends Migration
             $table->softDeletes();
             $table->dateTime("published_at")->nullable();
 
-            $table->text("description");
+            $table->text("description")->nullable();
             $table->string("slug");
             $table->string("title");
         });
