@@ -2,7 +2,6 @@
 
 namespace GeneaLabs\LaravelNovaBlog;
 
-use App\User;
 use Cviebrock\EloquentSluggable\Sluggable;
 use GeneaLabs\LaravelNovaMorphManyToOne\MorphManyToOne;
 use GeneaLabs\LaravelNovaMorphManyToOne\Traits\HasMorphManyToOne;
@@ -47,7 +46,7 @@ class Post extends Model implements OverridableModel
 
     public function author() : BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(config("auth.providers.users.model"));
     }
 
     public function blog() : BelongsTo
