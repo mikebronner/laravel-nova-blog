@@ -15,6 +15,7 @@ class CreateBlogsTable extends Migration
             $table->dateTime("published_at")->nullable();
 
             $table->text("description");
+            $table->string("slug");
             $table->string("title");
         });
     }

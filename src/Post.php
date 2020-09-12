@@ -3,13 +3,13 @@
 namespace GeneaLabs\LaravelNovaBlog;
 
 use App\User;
+use Cviebrock\EloquentSluggable\Sluggable;
 use GeneaLabs\LaravelNovaMorphManyToOne\MorphManyToOne;
 use GeneaLabs\LaravelNovaMorphManyToOne\Traits\HasMorphManyToOne;
 use GeneaLabs\LaravelOverridableModel\Contracts\OverridableModel;
 use GeneaLabs\LaravelOverridableModel\Traits\Overridable;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model implements OverridableModel
@@ -17,6 +17,7 @@ class Post extends Model implements OverridableModel
     use HasMorphManyToOne;
     use Overridable;
     use SoftDeletes;
+    use Sluggable;
 
     protected $dates = [
         "published_at",
@@ -26,8 +27,23 @@ class Post extends Model implements OverridableModel
         "featured_image_alt",
         "featured_image",
         "message",
+        "slug",
         "title",
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
+    public function sluggable() : array
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
 
     public function author() : BelongsTo
     {

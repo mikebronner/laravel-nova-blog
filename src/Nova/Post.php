@@ -10,7 +10,6 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\MorphToMany;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Resource as NovaResource;
@@ -24,12 +23,16 @@ class Post extends NovaResource
         'body',
     ];
 
+    public static function label()
+    {
+        return "Blog Posts";
+    }
+
     public function fields(Request $request)
     {
         $fields = [
             ID::make()
                 ->sortable(),
-            BelongsTo::make("Blog", "blog", Blog::class),
             FileUpload::make("Featured Image")
                 ->thumbnail(function ($image) {
                     return $image
@@ -46,12 +49,14 @@ class Post extends NovaResource
                 ->sortable()
                 ->rules("required"),
             Textarea::make("Excerpt")
-                ->rules("required"),
+                ->rules("required")
+                ->hideFromIndex(),
             Gutenberg::make("Message")
                 ->help("Here you can provide a little insight into the archive,
                     describe its goals, its history, etc. Viewers will see this
                     as the introduction on the public Archive page.")
-                ->rules("required"),
+                ->rules("required")
+                ->hideFromIndex(),
         ];
 
         if (class_exists("\\GeneaLabs\\LaravelNovaCategories\\Nova\\Category")) {
@@ -61,11 +66,6 @@ class Post extends NovaResource
                     "category",
                     "\\GeneaLabs\\LaravelNovaCategories\\Nova\\Category"
                 ),
-                // MorphToMany::make(
-                //     "Categories",
-                //     "categories",
-                //     "\\GeneaLabs\\LaravelNovaCategories\\Nova\\Category"
-                // ),
             ]);
         }
 
@@ -75,21 +75,20 @@ class Post extends NovaResource
                     "belongsToId" => $this->resource->governor_owned_by
                         ?: auth()->user()->id,
                 ])
-                ->searchable(),
-            // $this->ownerRelationshipField(),
-            // $this->ownerIndexField(),
+                ->searchable()
+                ->hideFromIndex(),
             DateTime::make("Published At"),
             DateTime::make("Created At")
                 ->onlyOnDetail(),
             DateTime::make("Updated At")
                 ->onlyOnDetail(),
+            BelongsTo::make(
+                "Blog",
+                "blog",
+                Blog::class
+            ),
         ]);
 
         return $fields;
-    }
-
-    public static function label()
-    {
-        return "Blog Posts";
     }
 }

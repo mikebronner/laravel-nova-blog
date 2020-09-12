@@ -22,6 +22,7 @@ class CreatePostsTable extends Migration
             $table->string("featured_image")->nullable();
             $table->string("featured_image_alt")->nullable();
             $table->text("message");
+            $table->string("slug");
             $table->string("title");
 
             $table->foreign("author_id")

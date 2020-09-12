@@ -2,19 +2,16 @@
 
 namespace GeneaLabs\LaravelNovaBlog\Nova;
 
-use GeneaLabs\LaravelNovaBlog\Blog as BlogModel;
-use GeneaLabs\LaravelNovaMorphManyToOne\Nova\MorphManyToOne;
-use GeneaLabs\NovaFileUploadField\FileUpload;
-use GeneaLabs\NovaGutenberg\Gutenberg;
-use Illuminate\Http\Request;
-use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\DateTime;
-use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\MorphToMany;
+use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Resource as NovaResource;
+use Laravel\Nova\Http\Requests\NovaRequest;
+use GeneaLabs\LaravelNovaBlog\Blog as BlogModel;
 
 class Blog extends NovaResource
 {
@@ -33,12 +30,25 @@ class Blog extends NovaResource
             Text::make("Title")
                 ->sortable()
                 ->rules("required"),
+            Text::make("URL Slug", "slug")
+                ->hideFromIndex()
+                ->hideWhenCreating(),
             Textarea::make("Description"),
+            Number::make("Posts", "postsCount", function () {
+                    return $this->posts->count();
+                })
+                ->onlyOnIndex()
+                ->sortable(),
             HasMany::make("Posts", "posts", Post::class),
             DateTime::make("Created At")
                 ->onlyOnDetail(),
             DateTime::make("Updated At")
                 ->onlyOnDetail(),
         ];
+    }
+
+    public static function indexQuery(NovaRequest $request, $query)
+    {
+        return $query->withCount('posts as postsCount');
     }
 }

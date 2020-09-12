@@ -22,10 +22,12 @@ class PostsController extends Controller
             ->with(compact("posts"));
     }
 
-    public function show(int $postId) : View
+    public function show(string $slug) : View
     {
         $postModel = (new Post)->model();
-        $post = (new $postModel)->find($postId);
+        $post = (new $postModel)
+            ->where("slug", $slug)
+            ->first();
 
         return view("laravel-nova-blog::posts.show")
             ->with(compact("post"));
