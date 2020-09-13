@@ -80,6 +80,6 @@ class Post extends Model implements OverridableModel
 
     public function getReadDurationMinutesAttribute() : string
     {
-        return str_word_count($this->message);
+        return (string) ceil(str_word_count($this->message) / 160);
     }
 }
