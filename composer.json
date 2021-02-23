@@ -10,18 +10,6 @@
         {
             "type": "composer",
             "url": "https://nova.laravel.com"
-        },
-        {
-            "type": "path",
-            "url": "../nova-gutenberg"
-        },
-        {
-            "type": "path",
-            "url": "../laravel-overridable-model"
-        },
-        {
-            "type": "path",
-            "url": "../laravel-nova-morph-many-to-one"
         }
     ],
     "require": {
@@ -29,7 +17,7 @@
         "genealabs/laravel-nova-morph-many-to-one": "^0.2.1",
         "genealabs/laravel-overridable-model": "^0.1.0",
         "genealabs/nova-file-upload-field": "^0.4.0",
-        "genealabs/nova-gutenberg": "*@dev",
+        "genealabs/nova-gutenberg": "^0.4.10",
         "illuminate/support": "^8.0",
         "jenssegers/model": "^1.4",
         "laravel/nova": "^3.9",
