@@ -22,10 +22,6 @@
         {
             "type": "path",
             "url": "../laravel-nova-morph-many-to-one"
-        },
-        {
-            "type": "vcs",
-            "url": "git@github.com:lloricode/laravel-filemanager.git"
         }
     ],
     "require": {
@@ -33,7 +29,7 @@
         "genealabs/laravel-nova-morph-many-to-one": "^0.2.1",
         "genealabs/laravel-overridable-model": "^0.1.0",
         "genealabs/nova-file-upload-field": "^0.4.0",
-        "genealabs/nova-gutenberg": "^0.4.5",
+        "genealabs/nova-gutenberg": "*@dev",
         "illuminate/support": "^8.0",
         "jenssegers/model": "^1.4",
         "laravel/nova": "^3.9",
