@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "cviebrock/eloquent-sluggable": "^8.0",
+        "cviebrock/eloquent-sluggable": "*",
         "genealabs/laravel-nova-morph-many-to-one": "*",
         "genealabs/laravel-overridable-model": "*",
         "genealabs/nova-file-upload-field": "*",
