@@ -19,10 +19,10 @@
         "genealabs/nova-file-upload-field": "*",
         "genealabs/nova-gutenberg": "*",
         "illuminate/support": "^9.0",
-        "jenssegers/model": "^1.4",
+        "jenssegers/model": "^1.5",
         "laravel/nova": "^3.9",
-        "laravel/scout": "^8.0",
-        "saumini/count": "^1.0",
+        "laravel/scout": "^9.0",
+        "saumini/count": "*",
         "symfony/thanks": "^1.2"
     },
     "autoload": {
