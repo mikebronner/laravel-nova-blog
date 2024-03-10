@@ -14,7 +14,7 @@
     ],
     "require": {
         "cviebrock/eloquent-sluggable": "*",
-        "genealabs/laravel-nova-morph-many-to-one": "*",
+        "genealabs/laravel-nova-morph-many-to-one": "dev-master",
         "genealabs/laravel-overridable-model": "*",
         "genealabs/nova-file-upload-field": "*",
         "genealabs/nova-gutenberg": "*",
