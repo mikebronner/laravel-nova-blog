@@ -17,7 +17,6 @@
         "genealabs/laravel-nova-morph-many-to-one": "dev-master",
         "genealabs/laravel-overridable-model": "*",
         "genealabs/nova-file-upload-field": "*",
-        "genealabs/nova-gutenberg": "*",
         "illuminate/support": "^10.0",
         "jenssegers/model": "^1.5",
         "laravel/nova": "^4.0",
@@ -39,7 +38,10 @@
         }
     },
     "config": {
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "symfony/thanks": true
+        }
     },
     "minimum-stability": "dev",
     "prefer-stable": true

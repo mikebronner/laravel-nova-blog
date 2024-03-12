@@ -5,13 +5,13 @@ namespace GeneaLabs\LaravelNovaBlog\Nova;
 use GeneaLabs\LaravelNovaBlog\Post as PostModel;
 use GeneaLabs\LaravelNovaMorphManyToOne\Nova\MorphManyToOne;
 use GeneaLabs\NovaFileUploadField\FileUpload;
-use GeneaLabs\NovaGutenberg\Gutenberg;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Resource as NovaResource;
 
 class Post extends NovaResource
@@ -51,7 +51,7 @@ class Post extends NovaResource
             Textarea::make("Excerpt")
                 ->rules("required")
                 ->hideFromIndex(),
-            Gutenberg::make("Message")
+            Trix::make("Message")
                 ->help("Here you can provide a little insight into the archive,
                     describe its goals, its history, etc. Viewers will see this
                     as the introduction on the public Archive page.")
