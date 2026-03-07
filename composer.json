@@ -17,10 +17,10 @@
         "genealabs/laravel-nova-morph-many-to-one": "dev-master",
         "genealabs/laravel-overridable-model": "*",
         "genealabs/nova-file-upload-field": "*",
-        "illuminate/support": "^10.0|^11.0|^12.0",
+        "illuminate/support": "^10.0|^11.0|^12.0|^13.0",
         "jenssegers/model": "^1.5",
         "laravel/nova": "^4.0|^5.0",
-        "laravel/scout": "^10.0|^11.0|^12.0",
+        "laravel/scout": "^10.0|^11.0|^12.0|^13.0",
         "saumini/count": "*",
         "symfony/thanks": "^1.2"
     },

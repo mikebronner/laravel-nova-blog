@@ -18,8 +18,8 @@ class Post extends Model implements OverridableModel
     use SoftDeletes;
     use Sluggable;
 
-    protected $dates = [
-        "published_at",
+    protected $casts = [
+        "published_at" => "datetime",
     ];
     protected $fillable = [
         "excerpt",
