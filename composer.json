@@ -13,6 +13,7 @@
         }
     ],
     "require": {
+        "php": "^8.2",
         "cviebrock/eloquent-sluggable": "*",
         "genealabs/laravel-nova-morph-many-to-one": "dev-master",
         "genealabs/laravel-overridable-model": "*",

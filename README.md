@@ -2,12 +2,12 @@
 Drop-in Blog module for Laravel using Nova as an admin panel.
 
 ## Requirements
-- PHP 7.3+
-- Laravel 7.x
-- Laravel Nova 3.x
-- TailwindCSS 1.6+
-- TailwindUI 0.4+
-- Tailwind Typography 0.2+
+
+| Requirement | Version |
+|---|---|
+| PHP | 8.2, 8.3, 8.4, 8.5 |
+| Laravel | 10.x, 11.x, 12.x |
+| Laravel Nova | 4.x, 5.x |
 
 ## Compatible Plugins
 - Laravel Governor
